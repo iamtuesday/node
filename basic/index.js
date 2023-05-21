@@ -65,4 +65,4 @@ const days = {
 
 
 const getDay2 = switchCase(days)
-console.log(getDay2(1));
+console.log(_getDay());
