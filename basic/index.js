@@ -2,6 +2,7 @@
 
 const getDay = () => {
   const dayNumber = new Date().getDay();
+
   let day;
   switch (dayNumber) {
     case 0:
@@ -33,27 +34,11 @@ const getDay = () => {
   return day;
 };
 
+
 const _getDay = () => {
-    const dayNumber = 8 || new Date().getDay();
-    const days = {
-        0: "Sunday",
-        1: "Monday",
-        2: "Tuesday",
-        3: "Wednesday",
-        4: "Thurday",
-        5: "Friday",
-        6: "Saturday",
-    };
-    
-    return days[dayNumber] || "Unknown";
-}
+  const dayNumber = new Date().getDay();
 
-
-const switchCase = (obj, defaultValue = "_default") => (value) => {
-    return obj[value] || defaultValue;
-}
-
-const days = {
+  const days = {
     0: "Sunday",
     1: "Monday",
     2: "Tuesday",
@@ -61,8 +46,27 @@ const days = {
     4: "Thurday",
     5: "Friday",
     6: "Saturday",
+  };
+
+  return days[dayNumber];
 };
 
 
-const getDay2 = switchCase(days)
+const switchCase =
+  (obj, defaultValue = "_default") =>
+  (value) => {
+    return obj[value] || defaultValue;
+  };
+
+const days = {
+  0: "Sunday",
+  1: "Monday",
+  2: "Tuesday",
+  3: "Wednesday",
+  4: "Thurday",
+  5: "Friday",
+  6: "Saturday",
+};
+
+const getDay2 = switchCase(days);
 console.log(_getDay());
